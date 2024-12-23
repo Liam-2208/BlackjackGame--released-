@@ -11,7 +11,7 @@ decks = 4
 WIDTH = 600
 HEIGHT = 900
 screen = pygame.display.set_mode([WIDTH, HEIGHT])
-pygame.display.set_caption('Pygame Blackjack!')
+pygame.display.set_caption('Blackjack!')
 fps = 60
 timer = pygame.time.Clock()
 font = pygame.font.Font('freesansbold.ttf', 44)
@@ -53,7 +53,7 @@ def draw_cards(player, dealer, reveal):
         pygame.draw.rect(screen, 'white', [70 + (70 * i), 460 + (5 * i), 120, 220], 0, 5)
         screen.blit(font.render(player[i], True, 'black'), (75 + 70 * i, 465 + 5 * i))
         screen.blit(font.render(player[i], True, 'black'), (75 + 70 * i, 635 + 5 * i))
-        pygame.draw.rect(screen, 'red', [70 + (70 * i), 460 + (5 * i), 120, 220], 5, 5)
+        pygame.draw.rect(screen, 'green', [70 + (70 * i), 460 + (5 * i), 120, 220], 5, 5)
 
     # if player hasn't finished turn, dealer will hide one card
     for i in range(len(dealer)):
@@ -64,7 +64,7 @@ def draw_cards(player, dealer, reveal):
         else:
             screen.blit(font.render('???', True, 'black'), (75 + 70 * i, 165 + 5 * i))
             screen.blit(font.render('???', True, 'black'), (75 + 70 * i, 335 + 5 * i))
-        pygame.draw.rect(screen, 'blue', [70 + (70 * i), 160 + (5 * i), 120, 220], 5, 5)
+        pygame.draw.rect(screen, 'red', [70 + (70 * i), 160 + (5 * i), 120, 220], 5, 5)
 
 
 # pass in player or dealer hand and get best score possible
@@ -97,7 +97,7 @@ def draw_game(act, record, result):
     # initially on startup (not active) only option is to deal new hand
     if not act:
         deal = pygame.draw.rect(screen, 'white', [150, 20, 300, 100], 0, 5)
-        pygame.draw.rect(screen, 'green', [150, 20, 300, 100], 3, 5)
+        pygame.draw.rect(screen, 'red', [150, 20, 300, 100], 3, 5)
         deal_text = font.render('DEAL HAND', True, 'black')
         screen.blit(deal_text, (165, 50))
         button_list.append(deal)
@@ -116,7 +116,7 @@ def draw_game(act, record, result):
         screen.blit(hit_text, (55, 735))
         button_list.append(hit)
         stand = pygame.draw.rect(screen, 'white', [300, 700, 300, 100], 0, 5)
-        pygame.draw.rect(screen, 'green', [300, 700, 300, 100], 3, 5)
+        pygame.draw.rect(screen, 'red', [300, 700, 300, 100], 3, 5)
         stand_text = font.render('STAND', True, 'black')
         screen.blit(stand_text, (355, 735))
         button_list.append(stand)

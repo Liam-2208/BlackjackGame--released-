@@ -2,6 +2,7 @@
 import copy
 import random
 import pygame
+import pyinstaller 
 
 pygame.init()
 # game variables
